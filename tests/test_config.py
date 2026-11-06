@@ -79,7 +79,7 @@ def test_user_file_beats_project_file(monkeypatch):
 def test_engine_defaults_to_auto_and_local_without_key():
     cfg = config.get_config()
     assert cfg['engine'] == 'auto'
-    assert cfg['gemini_model'] == 'gemini-3.7-flash'
+    assert cfg['gemini_model'] == 'gemini-3.8-flash'
     assert cfg['gemini_timeout'] == 600.0
     assert config.load_gemini_key() is None
     assert config.resolve_engine('auto', has_key=False) == 'local'
