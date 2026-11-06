@@ -14,7 +14,7 @@ DEFAULT_DETAIL = 'balanced'
 DETAILS = {'transcript', 'efficient', 'balanced', 'token-burner'}
 BACKENDS = {'auto', 'groq', 'openai', 'whisperx', 'none'}
 ENGINES = {'auto', 'gemini', 'local'}
-DEFAULT_GEMINI_MODEL = 'gemini-3.7-flash'
+DEFAULT_GEMINI_MODEL = 'gemini-3.8-flash'
 
 
 class ConfigError(ValueError):
