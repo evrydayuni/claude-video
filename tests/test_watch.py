@@ -208,8 +208,8 @@ def test_youtube_with_key_uses_gemini_and_touches_nothing_local(monkeypatch, cap
     assert watch.main() == 0
     out = capsys.readouterr().out
     assert seen['video'] == {'uri': 'https://youtu.be/abc'} and seen['question'] == 'When does it change?'
-    assert seen['clip'] is None and seen['model'] == 'gemini-3.7-flash'
-    assert '**Engine:** gemini-3.7-flash (agentic)' in out
+    assert seen['clip'] is None and seen['model'] == 'gemini-3.8-flash'
+    assert '**Engine:** gemini-3.8-flash (agentic)' in out
     assert '**Ignored local options:** --detail' in out
     assert '## Answer (from Gemini)' in out and 'At 00:10 it turns blue.' in out
     assert 'unit-key' not in out
