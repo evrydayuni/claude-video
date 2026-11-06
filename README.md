@@ -192,7 +192,7 @@ See the official guides for [Claude Code on the web](https://code.claude.com/doc
 |---|---|
 | `WATCH_ENGINE` / `--engine` | `auto`: Gemini when a `GEMINI_API_KEY` resolves, otherwise `local`. `gemini` without a key is an error before any network call. `local` never contacts Google. |
 | `GEMINI_API_KEY` | Looked up in the environment, then `~/.config/watch/.env`, then a cwd `.env`. Sent only as a request header; never logged. |
-| `WATCH_GEMINI_MODEL` | `gemini-3.7-flash`. Free-form, so newer model IDs work without an update. |
+| `WATCH_GEMINI_MODEL` | `gemini-3.8-flash`. Free-form, so newer model IDs work without an update. |
 | `WATCH_GEMINI_TIMEOUT` | `600` seconds for the question itself; upload and processing waits are bounded separately. |
 
 On a Gemini run, YouTube URLs go to Google directly; other URLs are downloaded with yt-dlp and, like local files, uploaded to Google's Files API, then deleted after the answer (an upload that cannot be deleted expires within 48 hours). `--start`/`--end` restrict Gemini to that range. Frame and transcription options (`--detail`, `--fps`, `--whisper`, …) apply only to the local engine and are listed as ignored. **Watch never switches engines on its own**: a Gemini failure is reported with its category and you decide whether to rerun with `--engine local`. The rest of this README describes the local engine.
