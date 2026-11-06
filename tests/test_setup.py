@@ -112,7 +112,7 @@ def test_gemini_engine_is_ready_without_media_binaries(monkeypatch):
     monkeypatch.setattr(setup, '_check_binaries', lambda: list(setup.REQUIRED_BINARIES))
     status = setup._status()
     assert status['engine'] == 'gemini' and status['configured_engine'] == 'auto'
-    assert status['gemini_key_present'] is True and status['gemini_model'] == 'gemini-3.7-flash'
+    assert status['gemini_key_present'] is True and status['gemini_model'] == 'gemini-3.8-flash'
     assert status['can_proceed'] is True and status['status'] == 'ready'
     assert status['binaries_required'] is False
     assert status['missing_binaries'] == ['ffmpeg', 'ffprobe', 'yt-dlp']
